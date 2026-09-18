@@ -1,5 +1,8 @@
 # Week 3 Assignment
 
+**Student ID:** 6705140029  
+**Student Name:** Kyaw San 
+
 This folder contains Python examples and pytest tests for unit testing, boundary testing, independent tests, and dependent tests.
 
 ## Files
