@@ -8,9 +8,13 @@ A robust Python command-line utility and module for converting Roman numerals in
 
 ## Features
 Bidirectional Validation: Rejects invalid or non-canonical Roman numerals (e.g., "IIII" or "VX") by cross-checking conversions.
+
 Input Sanitization: Automatically trims whitespace and handles case sensitivity (e.g., " xix " $\rightarrow$ 19).
+
 Interactive CLI: Built-in command-line interface menu for interactive conversions.
+
 Error Handling: Clear exception raising (ValueError, TypeError) for invalid inputs or incorrect types.
+
 Comprehensive Test Suite: Includes automated unit tests covering valid conversions, edge cases, and invalid inputs using pytest.
 
 ## How It Works
