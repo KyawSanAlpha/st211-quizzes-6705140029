@@ -20,5 +20,8 @@ Comprehensive Test Suite: Includes automated unit tests covering valid conversio
 ## How It Works
 Conversion Algorithm
 Sanitization & Checking: Trims whitespace and converts characters to uppercase.
+
 Subtractive Rule Parsing: Iterates through characters from left to right. If a character's value is smaller than the following character's value, it is subtracted from the total; otherwise, it is added.
+
 Canonical Verification: Re-converts the calculated integer back into a Roman numeral using to_roman(). If the result does not match the input string exactly, a ValueError is raised (e.g., "IIII" yields 4, but to_roman(4) yields "IV", triggering a validation failure).
+
