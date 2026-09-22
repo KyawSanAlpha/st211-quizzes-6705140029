@@ -1,5 +1,3 @@
----
-
 ### Folder-Specific `README.md` Files
 
 #### Lab 01 Main Index (`Lab_01/README.md`)
