@@ -1,5 +1,3 @@
----
-
 #### Lab 03 Main Index (`Lab_03/README.md`)
 
 ```markdown
