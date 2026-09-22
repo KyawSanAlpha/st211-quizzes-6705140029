@@ -1,0 +1,16 @@
+import pytest
+@pytest.mark.smoke
+def test_ctitical_login():
+    assert True
+
+@pytest.mark.smoke
+def test_ctitical_checkout():
+    assert True
+
+@pytest.mark.slow
+def test_full_report_generation():
+    assert True
+
+@pytest.mark.regression
+def test_old_bug_stays_fixed():
+    assert True
