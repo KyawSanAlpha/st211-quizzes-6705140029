@@ -1,105 +1,117 @@
-# 192-211 Automated Software Testing - Comprehensive Lab Portfolio
+# 192-211 Automated Software Testing
 
-| Attribute | Details |
+| Info | Details |
 | :--- | :--- |
 | **Course** | 192-211 Automated Software Testing |
 | **Institution** | International College, Siam University |
 | **Student Name** | Kyaw San |
 | **Student ID** | 6705140029 |
-| **Framework** | Python 3.8+ / `pytest` |
+| **Testing Framework** | Python and `pytest` |
 
----
+## Repository overview
 
-## Repository Overview
-
-This repository contains structured coursework and automated test suites for **192-211 Automated Software Testing**. Each lab is organized into domain-specific topic folders representing discrete software testing concepts and lab steps.
+This repository contains course labs, a mocking exercise, and a Roman numeral assignment. Each lab is divided into topic folders with example code and pytest tests.
 
 ```text
 .
-├── Lab_01/                     # Testing Fundamentals & Initial Automation
-│   ├── setup_environment/      # First assertions and test execution
-│   ├── calculator_module/      # Core functions and basic unit testing
-│   └── failing_and_exceptions/ # Error handling and expected exception testing
-├── Lab_02/                     # Writing Effective Test Cases
-│   ├── aaa_pattern/            # Arrange-Act-Assert design pattern
-│   ├── test_independence/      # State isolation and order-independent runs
-│   ├── boundary_value_analysis/# Testing edge cases and boundary thresholds
-│   ├── descriptive_naming/     # Self-documenting test specifications
-│   └── positive_negative_testing/ # Valid input vs. invalid input validation
-└── Lab_03/                     # Assertions & Test Suite Organization
-    ├── collections_floats/     # Collections assertions & approx float testing
-    ├── test_classes/           # Grouping suites within class wrappers
-    ├── using_markers/          # Custom tag filtering (smoke, slow, regression)
-    ├── skipping_expected_failures/ # Conditional skips and xfail tags
-    └── configurewithpytest/    # Project-wide setup using pytest.ini
-└── Roman_Assignment/           # Roman numeral conversion and validation
-    ├── roman.py                # Roman numeral converter entry point
-    └── test_roman.py           # Converter behavior and invalid-input tests
+├── Lab_01/                  # Testing fundamentals and first automated tests
+├── Lab_02/                  # Test design, independence, and input validation
+├── Lab_03/                  # Assertions, markers, skips, and pytest configuration
+├── Lab_04/                  # Fixtures, fixture scopes, and setup/teardown
+├── Lab_05/                  # Parameterized tests and data-driven testing
+├── Mock_Lab/                # Mocking a random temperature dependency
+├── Roman_Assignment/        # Roman numeral conversion and validation
+├── pytest.ini               # Repository-wide pytest settings and markers
+└── README.md
+```
 
-    Lab Modules Summary
-Lab 01: Testing Fundamentals
+## Lab topics
 
-    setup_environment/: Initial environment setup and baseline test execution using pytest.
+### Lab 01 - Testing fundamentals
 
-    calculator_module/: Testing unit operations (add, subtract, multiply, divide).
+- `setup_environment/`: initial pytest setup and a basic test.
+- `calculator_module/`: calculator functions and unit tests.
+- `failing_and_exceptions/`: assertion failures and expected exceptions.
 
-    failing_and_exceptions/: Handling assertion failures, debugging output, and validating exceptions using pytest.raises.
+### Lab 02 - Effective test cases
 
-Lab 02: Writing Effective Test Cases
+- `aaa_pattern/`: Arrange-Act-Assert structure.
+- `boundary_value_analysis/`: tests around score thresholds.
+- `descriptive_naming/`: descriptive test names.
+- `positive_negative_testing/`: valid and invalid input cases.
+- `test_independence/`: independent tests and state handling.
 
-    aaa_pattern/: Enforcing the Arrange-Act-Assert testing pattern for clear intent.
+### Lab 03 - Assertions and test organization
 
-    test_independence/: Isolating test execution data to prevent shared state side-effects.
+- `collections_floats/`: collection assertions and approximate float comparisons.
+- `configure_with_pytest/`: pytest configuration and strict marker behavior.
+- `skipping_expected_failures/`: conditional skips and expected failures.
+- `test_classes/`: grouping tests in classes.
+- `using_markers/`: categorizing and selecting tests with markers.
 
-    boundary_value_analysis/: Evaluating critical min, max, and threshold scores.
+### Lab 04 - Fixtures
 
-    descriptive_naming/: Applying test_[what]_[condition]_[expected] conventions.
+- `Factory_Fixtures/`: fixture factories that create test data on demand.
+- `Fixtures/`: basic reusable fixtures.
+- `Fixtures_Shares/`: fixtures shared between test modules with `conftest.py`.
+- `Scopes/`: function, module, and session fixture scopes.
+- `SetUp&Teardown/`: resource setup and cleanup using yield fixtures.
 
-    positive_negative_testing/: Balancing happy-path and edge-case error assertions.
+### Lab 05 - Parameterized testing
 
-Lab 03: Assertions and Test Organization
+- `DataDriven_Tesing/`: test cases loaded from CSV and JSON.
+- `Ids&Readibility/`: generated and custom parameter IDs and parameter marks.
+- `Parameterized_Fixtures/`: fixtures that run tests with multiple values.
+- `Parameters/`: parametrized calculations, error cases, and combinations.
+- `Parametrization/`: parametrized tests for math utilities.
 
-    collections_floats/: Deep comparison on lists, sets, dicts, and float precision checks via pytest.approx.
+### Other coursework
 
-    test_classes/: Encapsulating related test cases inside reusable test classes (Test*).
+- `Mock_Lab/`: tests weather descriptions using a mocked temperature source; see the [Mock_Lab README](./Mock_Lab/README.md).
+- `Roman_Assignment/`: Roman numeral conversion and input validation.
 
-    using_markers/: Filtering test suites dynamically with custom markers (smoke, slow, regression).
+## Requirements and setup
 
-    skipping_expected_failures/: Handling feature flags, skipped runs, and tracking known bugs with xfail.
+- Python 3.8 or newer
+- `pytest`
 
-    configurewithpytest/: Standardizing runtime configurations using pytest.ini and --strict-markers.
+Create and activate a virtual environment, then install pytest:
 
-Roman Numeral Assignment
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+python -m pip install pytest
+```
 
-    Roman_Assignment/: Implementing Roman numeral conversion, including subtractive notation and validation of invalid inputs.
+## Running tests
 
-Execution Guide
-Environment Setup
-Bash
+Run all tests discovered by the repository configuration:
 
-# Create virtual environment
-python3 -m venv venv
+```powershell
+python -m pytest
+```
 
-# Activate virtual environment
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+Run a particular lab or exercise:
 
-# Install dependencies
-pip install pytest
+```powershell
+python -m pytest Lab_01
+python -m pytest Lab_02
+python -m pytest Lab_03
+python -m pytest Lab_04
+python -m pytest Lab_05
+python -m pytest Mock_Lab
+python -m pytest Roman_Assignment
+```
 
-Running Test Suites
-Bash
+For folder names containing `&`, quote the path in PowerShell:
 
-# Run all tests across the entire repository
-pytest
+```powershell
+python -m pytest '.\Lab_04\SetUp&Teardown'
+python -m pytest '.\Lab_05\Ids&Readibility'
+```
 
-# Run tests within a specific lab
-pytest Lab_01/
-pytest Lab_02/
-pytest Lab_03/
-pytest Roman_Assignment/
+The root [pytest.ini](./pytest.ini) enables verbose output, short tracebacks, and strict marker validation. It also declares the `smoke`, `slow`, and `regression` markers.
 
-# Run a specific subfolder module
-pytest Lab_03/collections_floats/ -v
+## Current notes
 
-# Run the Roman numeral assignment tests
-pytest Roman_Assignment/test_roman.py -v
+Some exercises intentionally demonstrate incomplete or problematic tests. For example, the Lab 05 JSON uppercase example contains a numeric input although the test calls `.upper()`, and the `Ids&Readibility` discount test imports a module not present in that folder. Review individual lab READMEs and test output when running those exercises.
