@@ -31,3 +31,5 @@ pytest Lab_03/ -v
 
 # Run smoke tests only
 pytest Lab_03/ -m smoke -v
+```
+
